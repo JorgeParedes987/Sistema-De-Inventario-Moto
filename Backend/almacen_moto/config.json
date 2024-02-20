@@ -1,0 +1,7 @@
+{
+  "url-backend": "127.0.0.1",
+  "port": 9999,
+
+  "data-db-connection": "mongodb+srv://usuario-pruebas:1002961321@cluster0.mfkie5o.mongodb.net/almacen-moto?retryWrites=true&w=majority",
+  "name-db" : "almacen-moto"
+}

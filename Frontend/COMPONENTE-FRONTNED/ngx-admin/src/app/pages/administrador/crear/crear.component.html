@@ -1,0 +1,72 @@
+<div class="col-lg-12">
+    <nb-card>
+        <nb-card-header *ngIf="modoCreacion">
+            CREAR ADMINISTRADOR
+        </nb-card-header>
+        <nb-card-header *ngIf="!modoCreacion">
+            ACTUALIZAR ADMINISTRADOR
+        </nb-card-header>
+        <nb-card-body>
+            <div class="row">
+                <div class="col-3">
+                    <label>Identificacion</label>
+                </div>
+                <div class="col-9">
+                    <input class="form-control" type="text" [disabled]="!modoCreacion"
+                        [(ngModel)]="laAdministrador.identificacion" fullwidth>
+                    <p *ngIf="intentoEnvio && laAdministrador.identificacion=='' ">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3">
+                    <label>Nombre</label>
+                </div>
+                <div class="col-9">
+                    <input class="form-control" type="text" 
+                    [(ngModel)]="laAdministrador.nombre" fullwidth>
+                    <p *ngIf="intentoEnvio && laAdministrador.nombre=='' ">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3">
+                    <label>Telefono</label>
+                </div>
+                <div class="col-9">
+                    <input class="form-control" type="text"
+                     [(ngModel)]="laAdministrador.telefono" fullwidth>
+                    <p *ngIf="intentoEnvio && laAdministrador.telefono==''">Requerido</p>
+                </div>
+            </div>
+            <br>
+
+
+
+            <br>
+            
+            <div class="row">
+                <div class="col-3">
+                    <label>Email</label>
+                </div>
+                <div class="col-9">
+                    <input class="form-control" type="text" 
+                    [(ngModel)]="laAdministrador.email" fullwidth>
+                    <p *ngIf="intentoEnvio && laAdministrador.email=='' ">Requerido</p>
+
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <button *ngIf="modoCreacion" class="btn btn-primary btn-block" (click)="agregar()">
+
+                    Crear
+                </button>
+                <button *ngIf="!modoCreacion" class="btn btn-primary btn-block" (click)="editar()">
+
+                    Actualizar
+                </button>
+            </div>
+        </nb-card-body>
+    </nb-card>
+</div>

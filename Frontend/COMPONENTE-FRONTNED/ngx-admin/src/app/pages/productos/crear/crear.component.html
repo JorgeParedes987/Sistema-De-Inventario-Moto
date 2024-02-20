@@ -1,0 +1,83 @@
+<div class="col-lg-12">
+    <nb-card>
+        <nb-card-header *ngIf="modoCreacion">
+            CREAR PRODUCTO
+        </nb-card-header>
+        <nb-card-header *ngIf="!modoCreacion">
+            ACTUALIZAR PRODUCTO
+        </nb-card-header>
+        <nb-card-body>
+            <div class="row">
+                <div class="col-3">
+                    <label>Codigo</label>
+                </div>
+                <div class="col-9">
+                    <input class="form-control" type="text"
+                     [disabled]="!modoCreacion" 
+                     [(ngModel)]="elProductos.codigo" fullwidth>
+                    <p *ngIf="intentoEnvio && elProductos.codigo==''">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3">
+                    <label>Nombre</label>
+                </div>
+                <div class="col-9">
+                    <input class="form-control" type="text" 
+                    [(ngModel)]="elProductos.nombre" fullwidth>
+                    <p *ngIf="intentoEnvio && elProductos.nombre=='' ">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3">
+                    <label>Descripcion</label>
+                </div>
+                <div class="col-9">
+                    <input class="form-control" type="text"
+                     [(ngModel)]="elProductos.descripcion" fullwidth>
+                    <p *ngIf="intentoEnvio && elProductos.descripcion=='' ">Requerido</p>
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-3">
+                    <label>Cantidad</label>
+                </div>
+                <div class="col-9">
+                    <input class="form-control" type="text" 
+                    [(ngModel)]="elProductos.cantidad" fullwidth>
+                    <p *ngIf="intentoEnvio && elProductos.cantidad=='' ">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3">
+                    <label>Precio</label>
+                </div>
+                <div class="col-9">
+                    <input class="form-control" type="text" 
+                    [(ngModel)]="elProductos.precio" fullwidth>
+                    <p *ngIf="intentoEnvio && elProductos.precio=='' ">Requerido</p>
+                </div>
+            </div>
+            <br>
+
+
+            <br>
+
+            <div class="row">
+                <button *ngIf="modoCreacion" class="btn btn-primary btn-block" (click)="agregar()">
+                   
+                    Crear
+                </button>
+                <button *ngIf="!modoCreacion" class="btn btn-primary btn-block" (click)="editar()">
+                   
+                    Actualizar
+                </button>
+            </div>
+        </nb-card-body>
+    </nb-card>
+</div>
